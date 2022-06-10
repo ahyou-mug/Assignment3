@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace WindowsFormsApp1
 {
@@ -34,10 +35,10 @@ namespace WindowsFormsApp1
             {"memDuration",""},
             {"payMethod",""},
             {"frequency",""},
-            {"extra247",false},
-            {"extraPT",false },
-            {"extraDT",false },
-            {"extraVT",false },
+            {"extra247",0},
+            {"extraPT",0},
+            {"extraDT",0},
+            {"extraVT",0},
             {"payAmount",null},
             {"basePrice",0}
         };
@@ -56,18 +57,24 @@ namespace WindowsFormsApp1
             {"extrasDT",20 },
             {"extrasVT",2 },
             {"paymentDD",1 }, // subtract total - (total/100 * 1)
-            {"duration3",12 },
-            {"duration6",26 },
+        };
+
+        // Dictionary for duration data
+        Dictionary<string, int> Duration = new Dictionary<string, int>()
+        {
+            {"duration3", 12 },
+            {"duration6", 26 },
             {"duration12",52 },
             {"duration24",104 }
         };
+
 
         // Method to return customer strings
         public void textReturn()
         {
             foreach (var x in Controls.OfType<TextBox>())
                 {
-                    Customer[x.Name].Value = x.Text;
+                    Customer[x.Name] = x.Text;
                 }
         }
 
@@ -78,38 +85,35 @@ namespace WindowsFormsApp1
             {
                 if (x.Checked == true)
                 {
-                    Customer["membershipType"].Value = x.Text;
+                    Customer["membershipType"] = x.Text;
                 }
             }
             foreach (var x in memDuration.Controls.OfType<RadioButton>())
             {
                 if (x.Checked == true)
                 {
-                    Customer["memDuration"].Value = x.Text;
+                    Customer["memDuration"] = x.Text;
                 }
             }
             foreach (var x in payMethod.Controls.OfType<RadioButton>())
             {
                 if (x.Checked == true)
                 {
-                    Customer["payMethod"].Value = x.Text;
+                    Customer["payMethod"] = x.Text;
                 }
             }
             foreach (var x in frequency.Controls.OfType<RadioButton>())
             {
                 if (x.Checked == true)
                 {
-                    Customer["frequency"].value = x.Text;
+                    Customer["frequency"] = x.Text;
                 }
             }
-            foreach (var x in memType.Controls.OfType<CheckBox>())
+            foreach (var x in extras.Controls.OfType<CheckBox>())
             {
                 if (x.Checked == true)
                 {
-                    if (Customer[x.Text].Exists)
-                    {
-                        Customer[x.Text].Value = x.Checked;
-                    }
+                    Customer[x.Name] = 1;
                 }
             }
         }
@@ -117,27 +121,27 @@ namespace WindowsFormsApp1
         // Method to calculate price
         public void priceCalc()
         {
-            foreach (var x in Price)
+            foreach (var x in Price.Keys)
             {
                 if (x == Customer["membershipType"])
                 {
-                    Customer["basePrice"].Value += x.Value;
+                    Customer["basePrice"] += x;
                 }
                 if (x == Customer["memDuration"])
                 {
-                    Customer["basePrice"].Value += x.Value;
+                    Customer["basePrice"] += x;
                 }
-                if (x == Customer["membershipType"])
+                /*if (x == Customer["membershipType"]) // double up??
                 {
-                    Customer["basePrice"].Value += x.Value;
-                }
-                if (Customer[x.ToString()] == true)
+                    Customer["basePrice"] += x;
+                }*/
+                if (x.Contains("extra") == true)
                 {
-                    Customer["basePrice"].Value += x.Value;
+                    Customer["basePrice"] += Price[x];
                 }
                 if (x == Customer["payMethod"])
                 {
-                    Customer["basePrice"].Value = Customer["basePrice"].Value - (Customer["basePrice"].value/100 * x.Value); // base price - (base price/100 * 1)
+                    Customer["basePrice"] = Customer["basePrice"] - (Customer["basePrice"]/100 * Price[x]); // base price - (base price/100 * 1)
                 }
             }
             // Calculate payment amount based on number of weeks in duration
@@ -147,11 +151,11 @@ namespace WindowsFormsApp1
             }
             if (Customer["frequency"] == "frequencyMonthly")
             {
-                Customer["payAmount"] = Customer["basePrice"] * (Price[Customer["memDuration"]]/4);// divide by 4 for monthly
+                Customer["payAmount"] = Customer["basePrice"] * (Price[Customer["memDuration"].Value]/4);// divide by 4 for monthly
             }
             if (Customer["frequency"] == "frequencyFull")
             {
-                Customer["payAmount"] = Customer["basePrice"].Value * Price[Customer["memDuration"]];// multiply price by weeks in duration
+                Customer["payAmount"] = Customer["basePrice"] * Duration[Customer["memDuration"]];// multiply price by weeks in duration
             }
         }
 
@@ -231,35 +235,64 @@ namespace WindowsFormsApp1
                 complete = true;
             }
         }
-        /*
-        private void Submit_Click(object sender, EventArgs e)
-        {
-            CheckForm();
-            if (complete == true)
-            {
-                System.Data.SqlClient.SqlConnection SqlConnection1 =
-                    new System.Data.SqlClient.SqlConnection("(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\OP\BIT502\Ass3\v2\WindowsFormsApp1\WindowsFormsApp1\CityGym.mdf;Integrated Security=True;Connect Timeout=30");
-                System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand();
-                cmd.CommandType = System.Data.CommandType.Text;
-                cmd.CommandText = "INSERT Customers (FirstName, LastName, Address, MobileNumber, MembershipType, MembershipDuration,PaymentFrequency,PaymentMethod,extras247,extrasPT,extrasDT,extrasVT,BasePrice,PaymentAmount) VALUES (Customer['firstname'],Customer['lastname'],Customer['address'],Customer['mobileNumber'],Customer['membershipType'],Customer['memDuration'],Customer['
-            }
 
+        // Method to Clear form
+        private void ClearForm()
+        {
+            foreach (var x in Controls.OfType<TextBox>())
+            {
+                x.Text = "";
+            }
+            foreach (var x in Controls.OfType<RadioButton>())
+            {
+                x.Checked = false;
+            }
+            foreach (var x in Controls.OfType<CheckBox>())
+            {
+                x.Checked = false;
+            }
         }
-        */
+        
 
         private void Submit_Click(object sender, EventArgs e)
         {
             CheckForm();
+            textReturn();
+            membershipData();
+            priceCalc();
             if (complete == true)
             {
-                DataSet CityGymDataSet DataRow row = Customers.newRow();
+                string connectionString;
+                SqlConnection cnn;
+                connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\OP\BIT502\Ass3\v2\WindowsFormsApp1\WindowsFormsApp1\CityGym.mdf;Integrated Security=True;Connect Timeout=30";
+                cnn = new SqlConnection(connectionString);
+                cnn.Open();
+                //MessageBox.Show("Connection Open");
 
-                DataRow t = .Customers.newRow();
+                SqlCommand command;
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                
+                dynamic val;
+                foreach (var key in Customer.Keys)
+                {
+                    val = Customer[key];
+                    string sql = "INSERT INTO Customer (@key) VALUES (@val)";
+                    command = new SqlCommand(sql, cnn);
 
-                CityGymDataSet.Customers newCustomersRow;
+                    adapter.SelectCommand = new SqlCommand(sql, cnn);
+                    adapter.InsertCommand = command;
 
-                INSERT INTO dbo.CityGymDataSet.Customers
+                    command.Dispose();
+                }
+                cnn.Close();
+                ClearForm();
             }
+        }
+
+        // Cancel form
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
