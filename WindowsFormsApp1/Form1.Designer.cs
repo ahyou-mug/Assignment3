@@ -32,42 +32,45 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.firstName = new System.Windows.Forms.TextBox();
+            this.lastName = new System.Windows.Forms.TextBox();
+            this.mobileNumber = new System.Windows.Forms.TextBox();
+            this.address = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.label9 = new System.Windows.Forms.Label();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
-            this.label10 = new System.Windows.Forms.Label();
-            this.radioButton8 = new System.Windows.Forms.RadioButton();
-            this.radioButton9 = new System.Windows.Forms.RadioButton();
-            this.radioButton10 = new System.Windows.Forms.RadioButton();
-            this.label11 = new System.Windows.Forms.Label();
-            this.radioButton11 = new System.Windows.Forms.RadioButton();
-            this.radioButton12 = new System.Windows.Forms.RadioButton();
-            this.radioButton13 = new System.Windows.Forms.RadioButton();
-            this.label12 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.emContact = new System.Windows.Forms.TextBox();
+            this.emPhone = new System.Windows.Forms.TextBox();
+            this.emRelationship = new System.Windows.Forms.TextBox();
+            this.memBasic = new System.Windows.Forms.RadioButton();
+            this.memRegular = new System.Windows.Forms.RadioButton();
+            this.memPremium = new System.Windows.Forms.RadioButton();
+            this.duration3 = new System.Windows.Forms.RadioButton();
+            this.duration6 = new System.Windows.Forms.RadioButton();
+            this.duration12 = new System.Windows.Forms.RadioButton();
+            this.duration24 = new System.Windows.Forms.RadioButton();
+            this.paymentDD = new System.Windows.Forms.RadioButton();
+            this.paymentCC = new System.Windows.Forms.RadioButton();
+            this.paymentCash = new System.Windows.Forms.RadioButton();
+            this.frequencyWeekly = new System.Windows.Forms.RadioButton();
+            this.frequencyMonthly = new System.Windows.Forms.RadioButton();
+            this.frequencyFull = new System.Windows.Forms.RadioButton();
+            this.extra247 = new System.Windows.Forms.CheckBox();
+            this.extraPT = new System.Windows.Forms.CheckBox();
+            this.extraDT = new System.Windows.Forms.CheckBox();
+            this.extraVT = new System.Windows.Forms.CheckBox();
+            this.Submit = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.label13 = new System.Windows.Forms.Label();
+            this.frequency = new System.Windows.Forms.GroupBox();
+            this.payMethod = new System.Windows.Forms.GroupBox();
+            this.memDuration = new System.Windows.Forms.GroupBox();
+            this.memType = new System.Windows.Forms.GroupBox();
+            this.extras = new System.Windows.Forms.GroupBox();
+            this.frequency.SuspendLayout();
+            this.payMethod.SuspendLayout();
+            this.memDuration.SuspendLayout();
+            this.memType.SuspendLayout();
+            this.extras.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -106,33 +109,33 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Address:";
             // 
-            // textBox1
+            // firstName
             // 
-            this.textBox1.Location = new System.Drawing.Point(100, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(158, 20);
-            this.textBox1.TabIndex = 6;
+            this.firstName.Location = new System.Drawing.Point(100, 19);
+            this.firstName.Name = "firstName";
+            this.firstName.Size = new System.Drawing.Size(158, 20);
+            this.firstName.TabIndex = 6;
             // 
-            // textBox2
+            // lastName
             // 
-            this.textBox2.Location = new System.Drawing.Point(100, 45);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(158, 20);
-            this.textBox2.TabIndex = 7;
+            this.lastName.Location = new System.Drawing.Point(100, 45);
+            this.lastName.Name = "lastName";
+            this.lastName.Size = new System.Drawing.Size(158, 20);
+            this.lastName.TabIndex = 7;
             // 
-            // textBox3
+            // mobileNumber
             // 
-            this.textBox3.Location = new System.Drawing.Point(100, 73);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(158, 20);
-            this.textBox3.TabIndex = 8;
+            this.mobileNumber.Location = new System.Drawing.Point(100, 73);
+            this.mobileNumber.Name = "mobileNumber";
+            this.mobileNumber.Size = new System.Drawing.Size(158, 20);
+            this.mobileNumber.TabIndex = 8;
             // 
-            // textBox4
+            // address
             // 
-            this.textBox4.Location = new System.Drawing.Point(100, 99);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(426, 20);
-            this.textBox4.TabIndex = 9;
+            this.address.Location = new System.Drawing.Point(100, 99);
+            this.address.Name = "address";
+            this.address.Size = new System.Drawing.Size(426, 20);
+            this.address.TabIndex = 9;
             // 
             // label5
             // 
@@ -161,260 +164,216 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Emergency Relationship:";
             // 
-            // textBox5
+            // emContact
             // 
-            this.textBox5.Location = new System.Drawing.Point(394, 18);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(132, 20);
-            this.textBox5.TabIndex = 13;
+            this.emContact.Location = new System.Drawing.Point(394, 18);
+            this.emContact.Name = "emContact";
+            this.emContact.Size = new System.Drawing.Size(132, 20);
+            this.emContact.TabIndex = 13;
             // 
-            // textBox6
+            // emPhone
             // 
-            this.textBox6.Location = new System.Drawing.Point(394, 45);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(132, 20);
-            this.textBox6.TabIndex = 14;
+            this.emPhone.Location = new System.Drawing.Point(394, 45);
+            this.emPhone.Name = "emPhone";
+            this.emPhone.Size = new System.Drawing.Size(132, 20);
+            this.emPhone.TabIndex = 14;
             // 
-            // textBox7
+            // emRelationship
             // 
-            this.textBox7.Location = new System.Drawing.Point(394, 73);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(132, 20);
-            this.textBox7.TabIndex = 15;
+            this.emRelationship.Location = new System.Drawing.Point(394, 73);
+            this.emRelationship.Name = "emRelationship";
+            this.emRelationship.Size = new System.Drawing.Size(132, 20);
+            this.emRelationship.TabIndex = 15;
             // 
-            // label8
+            // memBasic
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(15, 155);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(97, 13);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Membership Type -";
+            this.memBasic.AutoSize = true;
+            this.memBasic.Location = new System.Drawing.Point(7, 28);
+            this.memBasic.Name = "memBasic";
+            this.memBasic.Size = new System.Drawing.Size(97, 17);
+            this.memBasic.TabIndex = 20;
+            this.memBasic.Text = "Basic ($10/pw)";
+            this.memBasic.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // memRegular
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(18, 171);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(97, 17);
-            this.radioButton1.TabIndex = 20;
-            this.radioButton1.Text = "Basic ($10/pw)";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.memRegular.AutoSize = true;
+            this.memRegular.Location = new System.Drawing.Point(7, 52);
+            this.memRegular.Name = "memRegular";
+            this.memRegular.Size = new System.Drawing.Size(108, 17);
+            this.memRegular.TabIndex = 21;
+            this.memRegular.Text = "Regular ($15/pw)";
+            this.memRegular.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // memPremium
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(18, 195);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(108, 17);
-            this.radioButton2.TabIndex = 21;
-            this.radioButton2.Text = "Regular ($15/pw)";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.memPremium.AutoSize = true;
+            this.memPremium.Location = new System.Drawing.Point(7, 76);
+            this.memPremium.Name = "memPremium";
+            this.memPremium.Size = new System.Drawing.Size(111, 17);
+            this.memPremium.TabIndex = 22;
+            this.memPremium.Text = "Premium ($20/pw)";
+            this.memPremium.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // duration3
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(18, 219);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(111, 17);
-            this.radioButton3.TabIndex = 22;
-            this.radioButton3.Text = "Premium ($20/pw)";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.duration3.AutoSize = true;
+            this.duration3.Location = new System.Drawing.Point(13, 21);
+            this.duration3.Name = "duration3";
+            this.duration3.Size = new System.Drawing.Size(69, 17);
+            this.duration3.TabIndex = 24;
+            this.duration3.TabStop = true;
+            this.duration3.Text = "3 Months";
+            this.duration3.UseVisualStyleBackColor = true;
             // 
-            // label9
+            // duration6
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(192, 155);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(113, 13);
-            this.label9.TabIndex = 23;
-            this.label9.Text = "Membership Duration -";
+            this.duration6.AutoSize = true;
+            this.duration6.Location = new System.Drawing.Point(13, 45);
+            this.duration6.Name = "duration6";
+            this.duration6.Size = new System.Drawing.Size(69, 17);
+            this.duration6.TabIndex = 25;
+            this.duration6.TabStop = true;
+            this.duration6.Text = "6 Months";
+            this.duration6.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // duration12
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(195, 171);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(69, 17);
-            this.radioButton4.TabIndex = 24;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "3 Months";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.duration12.AutoSize = true;
+            this.duration12.Location = new System.Drawing.Point(13, 69);
+            this.duration12.Name = "duration12";
+            this.duration12.Size = new System.Drawing.Size(75, 17);
+            this.duration12.TabIndex = 26;
+            this.duration12.TabStop = true;
+            this.duration12.Text = "12 Months";
+            this.duration12.UseVisualStyleBackColor = true;
             // 
-            // radioButton5
+            // duration24
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(195, 195);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(69, 17);
-            this.radioButton5.TabIndex = 25;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "6 Months";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.duration24.AutoSize = true;
+            this.duration24.Location = new System.Drawing.Point(13, 93);
+            this.duration24.Name = "duration24";
+            this.duration24.Size = new System.Drawing.Size(75, 17);
+            this.duration24.TabIndex = 27;
+            this.duration24.TabStop = true;
+            this.duration24.Text = "24 Months";
+            this.duration24.UseVisualStyleBackColor = true;
             // 
-            // radioButton6
+            // paymentDD
             // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(195, 219);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(75, 17);
-            this.radioButton6.TabIndex = 26;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "12 Months";
-            this.radioButton6.UseVisualStyleBackColor = true;
+            this.paymentDD.AutoSize = true;
+            this.paymentDD.Location = new System.Drawing.Point(13, 20);
+            this.paymentDD.Name = "paymentDD";
+            this.paymentDD.Size = new System.Drawing.Size(81, 17);
+            this.paymentDD.TabIndex = 29;
+            this.paymentDD.TabStop = true;
+            this.paymentDD.Text = "Direct Debit";
+            this.paymentDD.UseVisualStyleBackColor = true;
             // 
-            // radioButton7
+            // paymentCC
             // 
-            this.radioButton7.AutoSize = true;
-            this.radioButton7.Location = new System.Drawing.Point(195, 243);
-            this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(75, 17);
-            this.radioButton7.TabIndex = 27;
-            this.radioButton7.TabStop = true;
-            this.radioButton7.Text = "24 Months";
-            this.radioButton7.UseVisualStyleBackColor = true;
+            this.paymentCC.AutoSize = true;
+            this.paymentCC.Location = new System.Drawing.Point(13, 44);
+            this.paymentCC.Name = "paymentCC";
+            this.paymentCC.Size = new System.Drawing.Size(77, 17);
+            this.paymentCC.TabIndex = 30;
+            this.paymentCC.TabStop = true;
+            this.paymentCC.Text = "Credit Card";
+            this.paymentCC.UseVisualStyleBackColor = true;
             // 
-            // label10
+            // paymentCash
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(346, 154);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(93, 13);
-            this.label10.TabIndex = 28;
-            this.label10.Text = "Payment Method -";
+            this.paymentCash.AutoSize = true;
+            this.paymentCash.Location = new System.Drawing.Point(13, 67);
+            this.paymentCash.Name = "paymentCash";
+            this.paymentCash.Size = new System.Drawing.Size(49, 17);
+            this.paymentCash.TabIndex = 31;
+            this.paymentCash.TabStop = true;
+            this.paymentCash.Text = "Cash";
+            this.paymentCash.UseVisualStyleBackColor = true;
             // 
-            // radioButton8
+            // frequencyWeekly
             // 
-            this.radioButton8.AutoSize = true;
-            this.radioButton8.Location = new System.Drawing.Point(349, 171);
-            this.radioButton8.Name = "radioButton8";
-            this.radioButton8.Size = new System.Drawing.Size(81, 17);
-            this.radioButton8.TabIndex = 29;
-            this.radioButton8.TabStop = true;
-            this.radioButton8.Text = "Direct Debit";
-            this.radioButton8.UseVisualStyleBackColor = true;
+            this.frequencyWeekly.AutoSize = true;
+            this.frequencyWeekly.Location = new System.Drawing.Point(10, 21);
+            this.frequencyWeekly.Name = "frequencyWeekly";
+            this.frequencyWeekly.Size = new System.Drawing.Size(61, 17);
+            this.frequencyWeekly.TabIndex = 33;
+            this.frequencyWeekly.TabStop = true;
+            this.frequencyWeekly.Text = "Weekly";
+            this.frequencyWeekly.UseVisualStyleBackColor = true;
             // 
-            // radioButton9
+            // frequencyMonthly
             // 
-            this.radioButton9.AutoSize = true;
-            this.radioButton9.Location = new System.Drawing.Point(349, 195);
-            this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(77, 17);
-            this.radioButton9.TabIndex = 30;
-            this.radioButton9.TabStop = true;
-            this.radioButton9.Text = "Credit Card";
-            this.radioButton9.UseVisualStyleBackColor = true;
+            this.frequencyMonthly.AutoSize = true;
+            this.frequencyMonthly.Location = new System.Drawing.Point(10, 45);
+            this.frequencyMonthly.Name = "frequencyMonthly";
+            this.frequencyMonthly.Size = new System.Drawing.Size(62, 17);
+            this.frequencyMonthly.TabIndex = 34;
+            this.frequencyMonthly.TabStop = true;
+            this.frequencyMonthly.Text = "Monthly";
+            this.frequencyMonthly.UseVisualStyleBackColor = true;
             // 
-            // radioButton10
+            // frequencyFull
             // 
-            this.radioButton10.AutoSize = true;
-            this.radioButton10.Location = new System.Drawing.Point(349, 218);
-            this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(49, 17);
-            this.radioButton10.TabIndex = 31;
-            this.radioButton10.TabStop = true;
-            this.radioButton10.Text = "Cash";
-            this.radioButton10.UseVisualStyleBackColor = true;
+            this.frequencyFull.AutoSize = true;
+            this.frequencyFull.Location = new System.Drawing.Point(10, 68);
+            this.frequencyFull.Name = "frequencyFull";
+            this.frequencyFull.Size = new System.Drawing.Size(53, 17);
+            this.frequencyFull.TabIndex = 35;
+            this.frequencyFull.TabStop = true;
+            this.frequencyFull.Text = "In Full";
+            this.frequencyFull.UseVisualStyleBackColor = true;
             // 
-            // label11
+            // extra247
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(484, 153);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(107, 13);
-            this.label11.TabIndex = 32;
-            this.label11.Text = "Payment Frequency -";
+            this.extra247.AutoSize = true;
+            this.extra247.Location = new System.Drawing.Point(5, 27);
+            this.extra247.Name = "extra247";
+            this.extra247.Size = new System.Drawing.Size(85, 17);
+            this.extra247.TabIndex = 37;
+            this.extra247.Text = "24-7 Access";
+            this.extra247.UseVisualStyleBackColor = true;
             // 
-            // radioButton11
+            // extraPT
             // 
-            this.radioButton11.AutoSize = true;
-            this.radioButton11.Location = new System.Drawing.Point(487, 171);
-            this.radioButton11.Name = "radioButton11";
-            this.radioButton11.Size = new System.Drawing.Size(61, 17);
-            this.radioButton11.TabIndex = 33;
-            this.radioButton11.TabStop = true;
-            this.radioButton11.Text = "Weekly";
-            this.radioButton11.UseVisualStyleBackColor = true;
+            this.extraPT.AutoSize = true;
+            this.extraPT.Location = new System.Drawing.Point(5, 51);
+            this.extraPT.Name = "extraPT";
+            this.extraPT.Size = new System.Drawing.Size(103, 17);
+            this.extraPT.TabIndex = 38;
+            this.extraPT.Text = "Personal Trainer";
+            this.extraPT.UseVisualStyleBackColor = true;
             // 
-            // radioButton12
+            // extraDT
             // 
-            this.radioButton12.AutoSize = true;
-            this.radioButton12.Location = new System.Drawing.Point(487, 195);
-            this.radioButton12.Name = "radioButton12";
-            this.radioButton12.Size = new System.Drawing.Size(62, 17);
-            this.radioButton12.TabIndex = 34;
-            this.radioButton12.TabStop = true;
-            this.radioButton12.Text = "Monthly";
-            this.radioButton12.UseVisualStyleBackColor = true;
+            this.extraDT.AutoSize = true;
+            this.extraDT.Location = new System.Drawing.Point(5, 75);
+            this.extraDT.Name = "extraDT";
+            this.extraDT.Size = new System.Drawing.Size(67, 17);
+            this.extraDT.TabIndex = 39;
+            this.extraDT.Text = "Dietician";
+            this.extraDT.UseVisualStyleBackColor = true;
             // 
-            // radioButton13
+            // extraVT
             // 
-            this.radioButton13.AutoSize = true;
-            this.radioButton13.Location = new System.Drawing.Point(487, 218);
-            this.radioButton13.Name = "radioButton13";
-            this.radioButton13.Size = new System.Drawing.Size(53, 17);
-            this.radioButton13.TabIndex = 35;
-            this.radioButton13.TabStop = true;
-            this.radioButton13.Text = "In Full";
-            this.radioButton13.UseVisualStyleBackColor = true;
+            this.extraVT.AutoSize = true;
+            this.extraVT.Location = new System.Drawing.Point(5, 99);
+            this.extraVT.Name = "extraVT";
+            this.extraVT.Size = new System.Drawing.Size(91, 17);
+            this.extraVT.TabIndex = 40;
+            this.extraVT.Text = "Virtual Trainer";
+            this.extraVT.UseVisualStyleBackColor = true;
             // 
-            // label12
+            // Submit
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(18, 306);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(42, 13);
-            this.label12.TabIndex = 36;
-            this.label12.Text = "Extras -";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(21, 323);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(85, 17);
-            this.checkBox1.TabIndex = 37;
-            this.checkBox1.Text = "24-7 Access";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(21, 347);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(103, 17);
-            this.checkBox2.TabIndex = 38;
-            this.checkBox2.Text = "Personal Trainer";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(21, 371);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(67, 17);
-            this.checkBox3.TabIndex = 39;
-            this.checkBox3.Text = "Dietician";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(21, 395);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(91, 17);
-            this.checkBox4.TabIndex = 40;
-            this.checkBox4.Text = "Virtual Trainer";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(348, 368);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(130, 43);
-            this.button2.TabIndex = 42;
-            this.button2.Text = "Submit";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Submit.Location = new System.Drawing.Point(348, 368);
+            this.Submit.Name = "Submit";
+            this.Submit.Size = new System.Drawing.Size(130, 43);
+            this.Submit.TabIndex = 42;
+            this.Submit.Text = "Submit";
+            this.Submit.UseVisualStyleBackColor = true;
+            this.Submit.Click += new System.EventHandler(this.Submit_Click);
             // 
             // button3
             // 
@@ -425,69 +384,106 @@
             this.button3.Text = "Cancel";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // progressBar1
+            // frequency
             // 
-            this.progressBar1.Location = new System.Drawing.Point(349, 323);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(286, 27);
-            this.progressBar1.TabIndex = 44;
+            this.frequency.Controls.Add(this.frequencyFull);
+            this.frequency.Controls.Add(this.frequencyMonthly);
+            this.frequency.Controls.Add(this.frequencyWeekly);
+            this.frequency.Location = new System.Drawing.Point(472, 144);
+            this.frequency.Name = "frequency";
+            this.frequency.Size = new System.Drawing.Size(138, 128);
+            this.frequency.TabIndex = 46;
+            this.frequency.TabStop = false;
+            this.frequency.Text = "Payment Frequency";
             // 
-            // label13
+            // payMethod
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(346, 306);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(77, 13);
-            this.label13.TabIndex = 45;
-            this.label13.Text = "Form Progress:";
+            this.payMethod.Controls.Add(this.paymentCash);
+            this.payMethod.Controls.Add(this.paymentCC);
+            this.payMethod.Controls.Add(this.paymentDD);
+            this.payMethod.Location = new System.Drawing.Point(328, 144);
+            this.payMethod.Name = "payMethod";
+            this.payMethod.Size = new System.Drawing.Size(128, 128);
+            this.payMethod.TabIndex = 47;
+            this.payMethod.TabStop = false;
+            this.payMethod.Text = "Payment Method";
+            // 
+            // memDuration
+            // 
+            this.memDuration.Controls.Add(this.duration24);
+            this.memDuration.Controls.Add(this.duration12);
+            this.memDuration.Controls.Add(this.duration6);
+            this.memDuration.Controls.Add(this.duration3);
+            this.memDuration.Location = new System.Drawing.Point(172, 143);
+            this.memDuration.Name = "memDuration";
+            this.memDuration.Size = new System.Drawing.Size(139, 129);
+            this.memDuration.TabIndex = 48;
+            this.memDuration.TabStop = false;
+            this.memDuration.Text = "Membership Duration";
+            // 
+            // memType
+            // 
+            this.memType.Controls.Add(this.memPremium);
+            this.memType.Controls.Add(this.memRegular);
+            this.memType.Controls.Add(this.memBasic);
+            this.memType.Location = new System.Drawing.Point(11, 143);
+            this.memType.Name = "memType";
+            this.memType.Size = new System.Drawing.Size(145, 129);
+            this.memType.TabIndex = 49;
+            this.memType.TabStop = false;
+            this.memType.Text = "Membership Type";
+            // 
+            // extras
+            // 
+            this.extras.Controls.Add(this.extraVT);
+            this.extras.Controls.Add(this.extraDT);
+            this.extras.Controls.Add(this.extraPT);
+            this.extras.Controls.Add(this.extra247);
+            this.extras.Location = new System.Drawing.Point(11, 296);
+            this.extras.Name = "extras";
+            this.extras.Size = new System.Drawing.Size(131, 130);
+            this.extras.TabIndex = 50;
+            this.extras.TabStop = false;
+            this.extras.Text = "Extras";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.extras);
+            this.Controls.Add(this.memType);
+            this.Controls.Add(this.memDuration);
+            this.Controls.Add(this.payMethod);
+            this.Controls.Add(this.frequency);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.checkBox4);
-            this.Controls.Add(this.checkBox3);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.radioButton13);
-            this.Controls.Add(this.radioButton12);
-            this.Controls.Add(this.radioButton11);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.radioButton10);
-            this.Controls.Add(this.radioButton9);
-            this.Controls.Add(this.radioButton8);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.radioButton7);
-            this.Controls.Add(this.radioButton6);
-            this.Controls.Add(this.radioButton5);
-            this.Controls.Add(this.radioButton4);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.Submit);
+            this.Controls.Add(this.emRelationship);
+            this.Controls.Add(this.emPhone);
+            this.Controls.Add(this.emContact);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.address);
+            this.Controls.Add(this.mobileNumber);
+            this.Controls.Add(this.lastName);
+            this.Controls.Add(this.firstName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "CityGym - Registration";
+            this.frequency.ResumeLayout(false);
+            this.frequency.PerformLayout();
+            this.payMethod.ResumeLayout(false);
+            this.payMethod.PerformLayout();
+            this.memDuration.ResumeLayout(false);
+            this.memDuration.PerformLayout();
+            this.memType.ResumeLayout(false);
+            this.memType.PerformLayout();
+            this.extras.ResumeLayout(false);
+            this.extras.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -499,42 +495,40 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox firstName;
+        private System.Windows.Forms.TextBox lastName;
+        private System.Windows.Forms.TextBox mobileNumber;
+        private System.Windows.Forms.TextBox address;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton6;
-        private System.Windows.Forms.RadioButton radioButton7;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.RadioButton radioButton8;
-        private System.Windows.Forms.RadioButton radioButton9;
-        private System.Windows.Forms.RadioButton radioButton10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.RadioButton radioButton11;
-        private System.Windows.Forms.RadioButton radioButton12;
-        private System.Windows.Forms.RadioButton radioButton13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox emContact;
+        private System.Windows.Forms.TextBox emPhone;
+        private System.Windows.Forms.TextBox emRelationship;
+        private System.Windows.Forms.RadioButton memBasic;
+        private System.Windows.Forms.RadioButton memRegular;
+        private System.Windows.Forms.RadioButton memPremium;
+        private System.Windows.Forms.RadioButton duration3;
+        private System.Windows.Forms.RadioButton duration6;
+        private System.Windows.Forms.RadioButton duration12;
+        private System.Windows.Forms.RadioButton duration24;
+        private System.Windows.Forms.RadioButton paymentDD;
+        private System.Windows.Forms.RadioButton paymentCC;
+        private System.Windows.Forms.RadioButton paymentCash;
+        private System.Windows.Forms.RadioButton frequencyWeekly;
+        private System.Windows.Forms.RadioButton frequencyMonthly;
+        private System.Windows.Forms.RadioButton frequencyFull;
+        private System.Windows.Forms.CheckBox extra247;
+        private System.Windows.Forms.CheckBox extraPT;
+        private System.Windows.Forms.CheckBox extraDT;
+        private System.Windows.Forms.CheckBox extraVT;
+        private System.Windows.Forms.Button Submit;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.GroupBox frequency;
+        private System.Windows.Forms.GroupBox payMethod;
+        private System.Windows.Forms.GroupBox memDuration;
+        private System.Windows.Forms.GroupBox memType;
+        private System.Windows.Forms.GroupBox extras;
     }
 }
 
