@@ -16,5 +16,16 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+
+        private void Cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            new Intro().Show();
+        }
+
+        private void Search_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

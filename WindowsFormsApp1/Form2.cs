@@ -23,5 +23,11 @@ namespace WindowsFormsApp1
             new Registration().Show();
             // Need to get new reg form to load when clicked
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            new MemberSearch().Show();
+        }
     }
 }

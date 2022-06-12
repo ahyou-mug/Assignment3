@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cityGymDataSet = new WindowsFormsApp1.CityGymDataSet();
             this.cityGymDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cityGymDataSet = new WindowsFormsApp1.CityGymDataSet();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,10 +41,12 @@
             this.lastName = new System.Windows.Forms.TextBox();
             this.address = new System.Windows.Forms.TextBox();
             this.mobileNumber = new System.Windows.Forms.TextBox();
-            this.CustId = new System.Windows.Forms.TextBox();
+            this.custId = new System.Windows.Forms.TextBox();
+            this.Search = new System.Windows.Forms.Button();
+            this.Cancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cityGymDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cityGymDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cityGymDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -57,15 +59,15 @@
             this.dataGridView1.Size = new System.Drawing.Size(776, 269);
             this.dataGridView1.TabIndex = 0;
             // 
-            // cityGymDataSet
-            // 
-            this.cityGymDataSet.DataSetName = "CityGymDataSet";
-            this.cityGymDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // cityGymDataSetBindingSource
             // 
             this.cityGymDataSetBindingSource.DataSource = this.cityGymDataSet;
             this.cityGymDataSetBindingSource.Position = 0;
+            // 
+            // cityGymDataSet
+            // 
+            this.cityGymDataSet.DataSetName = "CityGymDataSet";
+            this.cityGymDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -140,19 +142,41 @@
             this.mobileNumber.Size = new System.Drawing.Size(100, 20);
             this.mobileNumber.TabIndex = 9;
             // 
-            // CustId
+            // custId
             // 
-            this.CustId.Location = new System.Drawing.Point(114, 141);
-            this.CustId.Name = "CustId";
-            this.CustId.Size = new System.Drawing.Size(100, 20);
-            this.CustId.TabIndex = 10;
+            this.custId.Location = new System.Drawing.Point(114, 141);
+            this.custId.Name = "custId";
+            this.custId.Size = new System.Drawing.Size(100, 20);
+            this.custId.TabIndex = 10;
+            // 
+            // Search
+            // 
+            this.Search.Location = new System.Drawing.Point(318, 31);
+            this.Search.Name = "Search";
+            this.Search.Size = new System.Drawing.Size(130, 34);
+            this.Search.TabIndex = 11;
+            this.Search.Text = "Search";
+            this.Search.UseVisualStyleBackColor = true;
+            this.Search.Click += new System.EventHandler(this.Search_Click);
+            // 
+            // Cancel
+            // 
+            this.Cancel.Location = new System.Drawing.Point(318, 81);
+            this.Cancel.Name = "Cancel";
+            this.Cancel.Size = new System.Drawing.Size(129, 34);
+            this.Cancel.TabIndex = 12;
+            this.Cancel.Text = "Cancel";
+            this.Cancel.UseVisualStyleBackColor = true;
+            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
             // 
             // MemberSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.CustId);
+            this.Controls.Add(this.Cancel);
+            this.Controls.Add(this.Search);
+            this.Controls.Add(this.custId);
             this.Controls.Add(this.mobileNumber);
             this.Controls.Add(this.address);
             this.Controls.Add(this.lastName);
@@ -166,8 +190,8 @@
             this.Name = "MemberSearch";
             this.Text = "Member Search";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cityGymDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cityGymDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cityGymDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,6 +211,8 @@
         private System.Windows.Forms.TextBox lastName;
         private System.Windows.Forms.TextBox address;
         private System.Windows.Forms.TextBox mobileNumber;
-        private System.Windows.Forms.TextBox CustId;
+        private System.Windows.Forms.TextBox custId;
+        private System.Windows.Forms.Button Search;
+        private System.Windows.Forms.Button Cancel;
     }
 }
