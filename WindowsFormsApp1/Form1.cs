@@ -8,18 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Diagnostics;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form1 : Form
+    public partial class Registration : Form
     {
-        public Form1()
+        public Registration()
         {
             InitializeComponent();
+            
         }
 
         // Checkform bool variable
         bool complete = false;
+
+        // form for return to menu
+        
 
         // Dictionary for Customer Data
         Dictionary<string, dynamic> Customer = new Dictionary<string, dynamic>()
@@ -40,7 +45,7 @@ namespace WindowsFormsApp1
             {"extraDT",0},
             {"extraVT",0},
             {"payAmount",null},
-            {"basePrice",0}
+            {"basePrice",null}
         };
 
 
@@ -50,13 +55,13 @@ namespace WindowsFormsApp1
             {"Basic ($10/pw)",10},
             {"Regular ($15/pw)",15 },
             {"Premium ($20/pw)",20 },
-            {"duration12",-2 },
-            {"duration24",-5 },
-            {"extras247",1 },
-            {"extrasPT",20 },
-            {"extrasDT",20 },
-            {"extrasVT",2 },
-            {"paymentDD",1 }, // subtract total - (total/100 * 1)
+            {"12",-2 },
+            {"24",-5 },
+            {"extra247",1 },
+            {"extraPT",20 },
+            {"extraDT",20 },
+            {"extraVT",2 },
+            {"Direct Debit",1 }, // subtract total - (total/100 * 1)
         };
 
         // Dictionary for duration data
@@ -92,7 +97,7 @@ namespace WindowsFormsApp1
             {
                 if (x.Checked == true)
                 {
-                    Customer["memDuration"] = x.Text;
+                    Customer["memDuration"] = Int32.Parse(x.Text);
                 }
             }
             foreach (var x in payMethod.Controls.OfType<RadioButton>())
@@ -125,35 +130,34 @@ namespace WindowsFormsApp1
             {
                 if (x == Customer["membershipType"])
                 {
-                    Customer["basePrice"] += x;
+                    Customer["basePrice"] = Price[x];
                 }
-                if (x == Customer["memDuration"])
+                if (x == Customer["memDuration"].ToString())
                 {
-                    Customer["basePrice"] += x;
+                    Customer["basePrice"] = Customer["basePrice"] + Price[x];
                 }
-                /*if (x == Customer["membershipType"]) // double up??
+                if (Customer.ContainsKey(x))
                 {
-                    Customer["basePrice"] += x;
-                }*/
-                if (x.Contains("extra") == true)
-                {
-                    Customer["basePrice"] += Price[x];
+                    if (Customer[x] == 1)
+                    {
+                        Customer["basePrice"] = Customer["basePrice"] + Price[x];
+                    }
                 }
                 if (x == Customer["payMethod"])
                 {
-                    Customer["basePrice"] = Customer["basePrice"] - (Customer["basePrice"]/100 * Price[x]); // base price - (base price/100 * 1)
+                    Customer["basePrice"] = Customer["basePrice"] - (Customer["basePrice"]/100 * Price[x]); // base price - (base price/100 * 1) - won't show unless convert to float
                 }
             }
             // Calculate payment amount based on number of weeks in duration
-            if (Customer["frequency"] == "frequencyWeekly")
+            if (Customer["frequency"] == "Weekly")
             {
                 Customer["payAmount"] = Customer["basePrice"];// already weekly
             }
-            if (Customer["frequency"] == "frequencyMonthly")
+            if (Customer["frequency"] == "Monthly")
             {
-                Customer["payAmount"] = Customer["basePrice"] * (Price[Customer["memDuration"].Value]/4);// divide by 4 for monthly
+                Customer["payAmount"] = (Customer["basePrice"] * Customer["memDuration"]) /4;// divide by 4 for monthly
             }
-            if (Customer["frequency"] == "frequencyFull")
+            if (Customer["frequency"] == "In Full")
             {
                 Customer["payAmount"] = Customer["basePrice"] * Duration[Customer["memDuration"]];// multiply price by weeks in duration
             }
@@ -251,40 +255,83 @@ namespace WindowsFormsApp1
             {
                 x.Checked = false;
             }
+            Customer.Clear();
         }
         
 
+        // String builder and insert into DB
+        private void intoDB()
+        {
+            string connectionString;
+            SqlConnection cnn;
+            const string V = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\OP\BIT502\Ass3\v2\WindowsFormsApp1\WindowsFormsApp1\CityGym.mdf;Integrated Security=True;";
+            connectionString = V;
+            cnn = new SqlConnection(connectionString);
+            cnn.Open();
+
+            var names = Customer.Select(pair =>
+               new
+               {
+                   ColumnName = pair.Key.Replace("[", "").Replace("]", ""),
+                   Value = pair.Value
+               }
+            );
+
+            // Build Columns
+            StringBuilder sb = new StringBuilder("INSERT INTO Customers(");
+            Boolean first = true;
+            foreach (var pair in names)
+            {
+                if (!first) sb.Append(", ");
+                first = false;
+
+                sb.Append("[");
+                sb.Append(pair.ColumnName);
+                sb.Append("]");
+            }
+            // Build Values
+            sb.Append(" ) VALUES ( ");
+
+            first = true;
+            foreach (var pair in names)
+            {
+                if (!first) sb.Append(", ");
+                first = false;
+
+                sb.Append("@");
+                sb.Append(pair.ColumnName);
+                //sb.Append("]]");
+            }
+
+            // Build Command
+            using (SqlCommand cmd = cnn.CreateCommand())
+            {
+
+                foreach (var pair in names)
+                {
+                    cmd.Parameters.AddWithValue(('@' + pair.ColumnName), pair.Value);
+                }
+                sb.Append(")");
+
+                cmd.CommandText = sb.ToString();
+
+                cmd.ExecuteNonQuery();
+            }
+            cnn.Close();
+        }
+
+        // Submit method
         private void Submit_Click(object sender, EventArgs e)
         {
             CheckForm();
             textReturn();
             membershipData();
             priceCalc();
+            //ConsoleLog();
             if (complete == true)
             {
-                string connectionString;
-                SqlConnection cnn;
-                connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\OP\BIT502\Ass3\v2\WindowsFormsApp1\WindowsFormsApp1\CityGym.mdf;Integrated Security=True;Connect Timeout=30";
-                cnn = new SqlConnection(connectionString);
-                cnn.Open();
-                //MessageBox.Show("Connection Open");
-
-                SqlCommand command;
-                SqlDataAdapter adapter = new SqlDataAdapter();
+                intoDB();
                 
-                dynamic val;
-                foreach (var key in Customer.Keys)
-                {
-                    val = Customer[key];
-                    string sql = "INSERT INTO Customer (@key) VALUES (@val)";
-                    command = new SqlCommand(sql, cnn);
-
-                    adapter.SelectCommand = new SqlCommand(sql, cnn);
-                    adapter.InsertCommand = command;
-
-                    command.Dispose();
-                }
-                cnn.Close();
                 ClearForm();
             }
         }
@@ -293,6 +340,7 @@ namespace WindowsFormsApp1
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
+            new Intro().Show();
         }
     }
 }

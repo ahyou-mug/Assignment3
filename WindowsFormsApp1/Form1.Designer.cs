@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class Form1
+    partial class Registration
     {
         /// <summary>
         /// Required designer variable.
@@ -220,10 +220,10 @@
             this.duration3.AutoSize = true;
             this.duration3.Location = new System.Drawing.Point(13, 21);
             this.duration3.Name = "duration3";
-            this.duration3.Size = new System.Drawing.Size(69, 17);
+            this.duration3.Size = new System.Drawing.Size(31, 17);
             this.duration3.TabIndex = 24;
             this.duration3.TabStop = true;
-            this.duration3.Text = "3 Months";
+            this.duration3.Text = "3";
             this.duration3.UseVisualStyleBackColor = true;
             // 
             // duration6
@@ -231,10 +231,10 @@
             this.duration6.AutoSize = true;
             this.duration6.Location = new System.Drawing.Point(13, 45);
             this.duration6.Name = "duration6";
-            this.duration6.Size = new System.Drawing.Size(69, 17);
+            this.duration6.Size = new System.Drawing.Size(31, 17);
             this.duration6.TabIndex = 25;
             this.duration6.TabStop = true;
-            this.duration6.Text = "6 Months";
+            this.duration6.Text = "6";
             this.duration6.UseVisualStyleBackColor = true;
             // 
             // duration12
@@ -242,10 +242,10 @@
             this.duration12.AutoSize = true;
             this.duration12.Location = new System.Drawing.Point(13, 69);
             this.duration12.Name = "duration12";
-            this.duration12.Size = new System.Drawing.Size(75, 17);
+            this.duration12.Size = new System.Drawing.Size(37, 17);
             this.duration12.TabIndex = 26;
             this.duration12.TabStop = true;
-            this.duration12.Text = "12 Months";
+            this.duration12.Text = "12";
             this.duration12.UseVisualStyleBackColor = true;
             // 
             // duration24
@@ -253,10 +253,10 @@
             this.duration24.AutoSize = true;
             this.duration24.Location = new System.Drawing.Point(13, 93);
             this.duration24.Name = "duration24";
-            this.duration24.Size = new System.Drawing.Size(75, 17);
+            this.duration24.Size = new System.Drawing.Size(37, 17);
             this.duration24.TabIndex = 27;
             this.duration24.TabStop = true;
-            this.duration24.Text = "24 Months";
+            this.duration24.Text = "24";
             this.duration24.UseVisualStyleBackColor = true;
             // 
             // paymentDD
@@ -420,7 +420,7 @@
             this.memDuration.Size = new System.Drawing.Size(139, 129);
             this.memDuration.TabIndex = 48;
             this.memDuration.TabStop = false;
-            this.memDuration.Text = "Membership Duration";
+            this.memDuration.Text = "Membership Months";
             // 
             // memType
             // 
@@ -447,7 +447,7 @@
             this.extras.TabStop = false;
             this.extras.Text = "Extras";
             // 
-            // Form1
+            // Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -473,7 +473,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "Registration";
             this.Text = "CityGym - Registration";
             this.frequency.ResumeLayout(false);
             this.frequency.PerformLayout();

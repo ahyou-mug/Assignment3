@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Intro : Form
+    public partial class MemberSearch : Form
     {
-        public Intro()
+        public MemberSearch()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            new Registration().Show();
-            // Need to get new reg form to load when clicked
         }
     }
 }
