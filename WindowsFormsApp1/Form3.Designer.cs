@@ -51,6 +51,7 @@
             this.address = new System.Windows.Forms.TextBox();
             this.mobileNumber = new System.Windows.Forms.TextBox();
             this.custId = new System.Windows.Forms.TextBox();
+            this.blankQuery = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.cityGymDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cityGymDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cityGymDataSetBindingSource1)).BeginInit();
@@ -230,11 +231,22 @@
             this.custId.Size = new System.Drawing.Size(112, 20);
             this.custId.TabIndex = 10;
             // 
+            // blankQuery
+            // 
+            this.blankQuery.Location = new System.Drawing.Point(320, 130);
+            this.blankQuery.Name = "blankQuery";
+            this.blankQuery.Size = new System.Drawing.Size(126, 36);
+            this.blankQuery.TabIndex = 15;
+            this.blankQuery.Text = "Refresh";
+            this.blankQuery.UseVisualStyleBackColor = true;
+            this.blankQuery.Click += new System.EventHandler(this.blankQuery_Click);
+            // 
             // MemberSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.blankQuery);
             this.Controls.Add(this.SearchIt);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Cancel);
@@ -279,5 +291,6 @@
         private System.Windows.Forms.TextBox address;
         private System.Windows.Forms.TextBox lastName;
         private System.Windows.Forms.TextBox firstName;
+        private System.Windows.Forms.Button blankQuery;
     }
 }
