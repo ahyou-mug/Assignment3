@@ -31,6 +31,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.classSearch = new System.Windows.Forms.Button();
             this.bookClass = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,11 +61,22 @@
             this.bookClass.Text = "Book Class";
             this.bookClass.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(597, 54);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(190, 38);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Cancel";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.bookClass);
             this.Controls.Add(this.classSearch);
             this.Controls.Add(this.dataGridView1);
@@ -80,5 +92,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button classSearch;
         private System.Windows.Forms.Button bookClass;
+        private System.Windows.Forms.Button button1;
     }
 }
