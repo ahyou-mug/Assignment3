@@ -46,12 +46,16 @@
             this.customersTableAdapter = new WindowsFormsApp1.CityGymDataSet1TableAdapters.CustomersTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.SearchIt = new System.Windows.Forms.GroupBox();
-            this.firstName = new System.Windows.Forms.TextBox();
-            this.lastName = new System.Windows.Forms.TextBox();
-            this.address = new System.Windows.Forms.TextBox();
-            this.mobileNumber = new System.Windows.Forms.TextBox();
             this.custId = new System.Windows.Forms.TextBox();
+            this.mobileNumber = new System.Windows.Forms.TextBox();
+            this.address = new System.Windows.Forms.TextBox();
+            this.lastName = new System.Windows.Forms.TextBox();
+            this.firstName = new System.Windows.Forms.TextBox();
             this.blankQuery = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip3 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip4 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.cityGymDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cityGymDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cityGymDataSetBindingSource1)).BeginInit();
@@ -196,26 +200,12 @@
             this.SearchIt.TabStop = false;
             this.SearchIt.Text = "SearchCriteria";
             // 
-            // firstName
+            // custId
             // 
-            this.firstName.Location = new System.Drawing.Point(76, 17);
-            this.firstName.Name = "firstName";
-            this.firstName.Size = new System.Drawing.Size(112, 20);
-            this.firstName.TabIndex = 6;
-            // 
-            // lastName
-            // 
-            this.lastName.Location = new System.Drawing.Point(76, 43);
-            this.lastName.Name = "lastName";
-            this.lastName.Size = new System.Drawing.Size(112, 20);
-            this.lastName.TabIndex = 7;
-            // 
-            // address
-            // 
-            this.address.Location = new System.Drawing.Point(76, 69);
-            this.address.Name = "address";
-            this.address.Size = new System.Drawing.Size(112, 20);
-            this.address.TabIndex = 8;
+            this.custId.Location = new System.Drawing.Point(76, 120);
+            this.custId.Name = "custId";
+            this.custId.Size = new System.Drawing.Size(112, 20);
+            this.custId.TabIndex = 10;
             // 
             // mobileNumber
             // 
@@ -224,12 +214,26 @@
             this.mobileNumber.Size = new System.Drawing.Size(100, 20);
             this.mobileNumber.TabIndex = 9;
             // 
-            // custId
+            // address
             // 
-            this.custId.Location = new System.Drawing.Point(76, 120);
-            this.custId.Name = "custId";
-            this.custId.Size = new System.Drawing.Size(112, 20);
-            this.custId.TabIndex = 10;
+            this.address.Location = new System.Drawing.Point(76, 69);
+            this.address.Name = "address";
+            this.address.Size = new System.Drawing.Size(112, 20);
+            this.address.TabIndex = 8;
+            // 
+            // lastName
+            // 
+            this.lastName.Location = new System.Drawing.Point(76, 43);
+            this.lastName.Name = "lastName";
+            this.lastName.Size = new System.Drawing.Size(112, 20);
+            this.lastName.TabIndex = 7;
+            // 
+            // firstName
+            // 
+            this.firstName.Location = new System.Drawing.Point(76, 17);
+            this.firstName.Name = "firstName";
+            this.firstName.Size = new System.Drawing.Size(112, 20);
+            this.firstName.TabIndex = 6;
             // 
             // blankQuery
             // 
@@ -240,6 +244,22 @@
             this.blankQuery.Text = "Refresh";
             this.blankQuery.UseVisualStyleBackColor = true;
             this.blankQuery.Click += new System.EventHandler(this.blankQuery_Click);
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup_1);
+            // 
+            // toolTip2
+            // 
+            this.toolTip2.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip2_Popup);
+            // 
+            // toolTip3
+            // 
+            this.toolTip3.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip3_Popup);
+            // 
+            // toolTip4
+            // 
+            this.toolTip4.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip4_Popup);
             // 
             // MemberSearch
             // 
@@ -292,5 +312,9 @@
         private System.Windows.Forms.TextBox lastName;
         private System.Windows.Forms.TextBox firstName;
         private System.Windows.Forms.Button blankQuery;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolTip toolTip2;
+        private System.Windows.Forms.ToolTip toolTip3;
+        private System.Windows.Forms.ToolTip toolTip4;
     }
 }

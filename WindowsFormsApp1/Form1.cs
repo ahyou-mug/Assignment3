@@ -14,13 +14,24 @@ namespace WindowsFormsApp1
         public Registration()
         {
             InitializeComponent();
-            
+        }
+
+        
+        private void Registration_Load(object sender, System.EventArgs e)
+        {
+            foreach (var tt in Controls.OfType<ToolTip>())
+            {
+                tt.AutoPopDelay = 500;
+                tt.InitialDelay = 500;
+                tt.ReshowDelay = 250;
+                tt.ShowAlways = true;
+                tt.Active = true;
+            }
+
         }
 
         // Checkform bool variable
         bool complete = false;
-
-        // form for return to menu
         
 
         // Dictionary for Customer Data
@@ -69,7 +80,7 @@ namespace WindowsFormsApp1
             {"duration12",52 },
             {"duration24",104 }
         };
-
+        
 
         // Method to return customer strings
         public void textReturn()
@@ -336,8 +347,80 @@ namespace WindowsFormsApp1
         // Cancel form
         private void button3_Click(object sender, EventArgs e)
         {
+            ClearForm();
+            Customer.Clear();
             this.Close();
             new Intro().Show();
+        }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+            toolTip1.SetToolTip(this.label5, "Enter the emergency contact name");
+        }
+
+        private void toolTip2_Popup(object sender, PopupEventArgs e)
+        {
+            toolTip2.SetToolTip(this.label1, "Enter the new members' First Name");
+        }
+
+        private void toolTip3_Popup(object sender, PopupEventArgs e)
+        {
+            toolTip3.SetToolTip(this.label2, "Enter the new members' Last Name");
+        }
+
+        private void toolTip4_Popup(object sender, PopupEventArgs e)
+        {
+            toolTip4.SetToolTip(this.label3, "Enter the members mobile number");
+        }
+
+        private void toolTip5_Popup(object sender, PopupEventArgs e)
+        {
+            toolTip5.SetToolTip(this.label4, "Enter the members address");
+        }
+
+        private void toolTip6_Popup(object sender, PopupEventArgs e)
+        {
+            toolTip6.SetToolTip(this.label6, "Enter the emergency contact's phone number");
+        }
+
+        private void toolTip7_Popup(object sender, PopupEventArgs e)
+        {
+            toolTip7.SetToolTip(this.label7, "Enter the contacts relationship to the new member");
+        }
+
+        private void toolTip8_Popup(object sender, PopupEventArgs e)
+        {
+            toolTip8.SetToolTip(this.memType, "Select the appropriate membership type");
+        }
+
+        private void toolTip9_Popup(object sender, PopupEventArgs e)
+        {
+            toolTip9.SetToolTip(this.memDuration, "Set the duration in months of the membership");
+        }
+
+        private void toolTip10_Popup(object sender, PopupEventArgs e)
+        {
+            toolTip10.SetToolTip(this.payMethod, "Select the payment method the new member would like to use");
+        }
+
+        private void toolTip11_Popup(object sender, PopupEventArgs e)
+        {
+            toolTip11.SetToolTip(this.frequency, "Select how often the new member would like to pay");
+        }
+
+        private void toolTip12_Popup(object sender, PopupEventArgs e)
+        {
+            toolTip12.SetToolTip(this.extras, "Select any extra services the new member would like");
+        }
+
+        private void toolTip13_Popup(object sender, PopupEventArgs e)
+        {
+            toolTip13.SetToolTip(this.button3, "Return to the main menu without saving any changes");
+        }
+
+        private void toolTip14_Popup(object sender, PopupEventArgs e)
+        {
+            toolTip14.SetToolTip(this.Submit, "Complete new member registration and save details");
         }
     }
 }

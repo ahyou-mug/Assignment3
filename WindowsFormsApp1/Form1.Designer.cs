@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -66,6 +67,20 @@
             this.memDuration = new System.Windows.Forms.GroupBox();
             this.memType = new System.Windows.Forms.GroupBox();
             this.extras = new System.Windows.Forms.GroupBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip3 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip4 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip5 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip6 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip7 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip8 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip9 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip10 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip11 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip12 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip13 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip14 = new System.Windows.Forms.ToolTip(this.components);
             this.frequency.SuspendLayout();
             this.payMethod.SuspendLayout();
             this.memDuration.SuspendLayout();
@@ -447,6 +462,65 @@
             this.extras.TabStop = false;
             this.extras.Text = "Extras";
             // 
+            // toolTip1
+            // 
+            this.toolTip1.IsBalloon = true;
+            this.toolTip1.ShowAlways = true;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
+            // 
+            // toolTip2
+            // 
+            this.toolTip2.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip2_Popup);
+            // 
+            // toolTip3
+            // 
+            this.toolTip3.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip3_Popup);
+            // 
+            // toolTip4
+            // 
+            this.toolTip4.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip4_Popup);
+            // 
+            // toolTip5
+            // 
+            this.toolTip5.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip5_Popup);
+            // 
+            // toolTip6
+            // 
+            this.toolTip6.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip6_Popup);
+            // 
+            // toolTip7
+            // 
+            this.toolTip7.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip7_Popup);
+            // 
+            // toolTip8
+            // 
+            this.toolTip8.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip8_Popup);
+            // 
+            // toolTip9
+            // 
+            this.toolTip9.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip9_Popup);
+            // 
+            // toolTip10
+            // 
+            this.toolTip10.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip10_Popup);
+            // 
+            // toolTip11
+            // 
+            this.toolTip11.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip11_Popup);
+            // 
+            // toolTip12
+            // 
+            this.toolTip12.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip12_Popup);
+            // 
+            // toolTip13
+            // 
+            this.toolTip13.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip13_Popup);
+            // 
+            // toolTip14
+            // 
+            this.toolTip14.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip14_Popup);
+            // 
             // Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -530,6 +604,20 @@
         private System.Windows.Forms.GroupBox memDuration;
         private System.Windows.Forms.GroupBox memType;
         private System.Windows.Forms.GroupBox extras;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolTip toolTip2;
+        private System.Windows.Forms.ToolTip toolTip3;
+        private System.Windows.Forms.ToolTip toolTip4;
+        private System.Windows.Forms.ToolTip toolTip5;
+        private System.Windows.Forms.ToolTip toolTip6;
+        private System.Windows.Forms.ToolTip toolTip7;
+        private System.Windows.Forms.ToolTip toolTip8;
+        private System.Windows.Forms.ToolTip toolTip9;
+        private System.Windows.Forms.ToolTip toolTip10;
+        private System.Windows.Forms.ToolTip toolTip11;
+        private System.Windows.Forms.ToolTip toolTip12;
+        private System.Windows.Forms.ToolTip toolTip13;
+        private System.Windows.Forms.ToolTip toolTip14;
     }
 }
 
